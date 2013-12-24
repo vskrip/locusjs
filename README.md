@@ -11,7 +11,7 @@ This application based on the AngularJS technology and consist of two parts: ser
 Server part of LocusJS implevented trought web service, accessible RESTfull API.
 Client part of LocusJS is Single Page Application (SPA), implemented how RESTfull client.
 
-##Structure Of Cataloges
+##Directory Structure
 
 TBD
 
