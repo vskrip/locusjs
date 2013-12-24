@@ -6,7 +6,6 @@ exports.setConnection = function (con) {
     connection = con;
 };
 
-// TODO: В JSLint ругается на неиспользуемый параметр req
 exports.findAll = function (req, res) {
     connection.query("SELECT * FROM tbl_field", function (err, rows) {
         if (err) {
