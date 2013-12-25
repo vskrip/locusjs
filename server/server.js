@@ -1,6 +1,6 @@
 var express = require('express'),
     mysql = require('mysql'),
-    field = require('./models/field')
+    project = require('./models/project')
 
 var connection = mysql.createConnection(
     {
@@ -8,7 +8,7 @@ var connection = mysql.createConnection(
         port : '3306',
         user : 'locusdb_user',
         password : 'password',
-        database : 'locusdb'
+        database : 'locus_db_test'
     }
 );
 
@@ -23,13 +23,13 @@ app.configure(function () {
     app.use(express.bodyParser());
 });
 
-field.setConnection(connection);
+project.setConnection(connection);
 
-app.get('/fields', field.findAll);
-app.get('/fields/:id', field.findById);
-app.post('/fields', field.addField);
-app.put('/fields/:id', field.updateField);
-app.del('/fields/:id', field.deleteField);
+app.get('/projects', project.findAll);
+app.get('/projects/:id', project.findById);
+app.post('/projects', project.addField);
+app.put('/projects/:id', project.updateField);
+app.del('/projects/:id', project.deleteField);
 
 app.listen(3000);
 console.log('Listening on port 3000...');
