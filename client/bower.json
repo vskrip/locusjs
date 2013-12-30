@@ -1,0 +1,18 @@
+{
+  "name": "locusjs-client",
+  "dependencies": {
+    "components-font-awesome": "latest",
+    "bootstrap": "latest",
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-i18n": "latest",
+    "angular-animate": "latest",
+    "angular-cookies": "latest",
+    "angular-loader": "latest",
+    "angular-resource": "latest",
+    "angular-sanitize": "latest",
+    "angular-touch": "latest",
+    "angular-mocks": "latest",    
+    "angularjs-scope.safeapply": "*"
+  }
+}

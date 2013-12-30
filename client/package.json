@@ -1,0 +1,39 @@
+{
+  "name": "locusjs-client",
+  "description": "Telemetric support application",
+  "version": "0.0.1",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/vskrip/locusjs"
+  },
+  "homepage": "http://locusjs.org",
+  "devDependencies": {  
+    "grunt": "latest",
+    "grunt-css": "latest",
+    "grunt-contrib-connect": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-shell": "latest",
+    "grunt-contrib-copy": "latest",
+    "karma-mocha": "latest",
+    "karma-chrome-launcher": "latest",
+    "karma-safari-launcher": "latest",
+    "karma-firefox-launcher": "latest",
+    "karma-ng-scenario": "latest",
+    "chai": "latest",
+    "karma-script-launcher": "latest",
+    "karma-html2js-preprocessor": "latest",
+    "karma-jasmine": "latest",
+    "karma-requirejs": "latest",
+    "karma-coffee-preprocessor": "latest",
+    "karma-phantomjs-launcher": "latest",
+    "karma": "latest",
+    "grunt-karma": "latest",
+    "grunt-open": "latest",
+    "ng-midway-tester": "latest",
+    "bower": "latest",
+    "phantomjs" : "latest",
+    "karma-junit-reporter" : "latest"
+  }
+}
