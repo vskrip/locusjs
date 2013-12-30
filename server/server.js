@@ -1,6 +1,6 @@
 var express = require('express'),
     mysql = require('mysql'),
-    project = require('./models/project')
+    project = require('./models/project');
 
 var connection = mysql.createConnection(
     {
