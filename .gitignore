@@ -3,5 +3,5 @@ logs/*
 npm-debug.log
 node_modules/*
 bower_components/*
-server/node_modules/*
+srv/node_modules/*
 .DS_Store

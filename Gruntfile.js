@@ -16,10 +16,10 @@ module.exports = function(grunt) {
         command: 'npm install'
       },
       bower_install: {
-        command: 'client/node_modules/.bin/bower install'
+        command: './node_modules/.bin/bower install'
       },
       font_awesome_fonts: {
-        command: 'cp -R client/bower_components/components-font-awesome/fonts client/app/fonts'
+        command: 'cp -R bower_components/components-font-awesome/fonts app/fonts'
       }
     },
 
@@ -148,5 +148,5 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', ['install', 'concat', 'connect:devserver', 'open:devserver', 'watch:assets']);
 
   //server daemon
-  grunt.registerTask('serve', ['connect:webserver']);
+  grunt.registerTask('server', ['connect:webserver']);
 };

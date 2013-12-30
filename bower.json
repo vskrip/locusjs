@@ -12,7 +12,8 @@
     "angular-resource": "latest",
     "angular-sanitize": "latest",
     "angular-touch": "latest",
-    "angular-mocks": "latest",    
+    "angular-mocks": "latest",
+    "angular-scenario": "latest",    
     "angularjs-scope.safeapply": "*"
   }
 }
