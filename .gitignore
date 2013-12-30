@@ -1,0 +1,7 @@
+logs/*
+!.gitkeep
+npm-debug.log
+client/node_modules/
+client/bower_components/
+server/node_modules/
+.DS_Store
