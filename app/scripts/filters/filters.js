@@ -1,10 +1,10 @@
-angular.module('App.Filters', []).
-  filter('range', function() {
-    return function(input, total) {
-      if(!input) return null;
-      total = parseInt(total);
-      for (var i=0; i<total; i++)
-        input.push(i);
-      return input;
-    };
-  });
+'use strict';
+
+/* Filters */
+
+angular.module('locusjsApp.filters', []).
+  filter('interpolate', ['version', function(version) {
+    return function(text) {
+      return String(text).replace(/\%VERSION\%/mg, version);
+    }
+  }]);

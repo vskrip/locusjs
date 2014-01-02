@@ -1,7 +1,6 @@
 {
   "name": "locusjs-client",
   "dependencies": {
-    "components-font-awesome": "latest",
     "bootstrap": "latest",
     "angular": "latest",
     "angular-route": "latest",

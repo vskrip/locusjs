@@ -24,5 +24,7 @@ module.exports = function(config) {
     '/': 'http://localhost:9999/'
   };
 
+  conf.urlRoot = '/__karma_midway__/';
+
   config.set(conf);
 };
