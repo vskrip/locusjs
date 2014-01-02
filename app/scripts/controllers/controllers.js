@@ -3,9 +3,14 @@
 /* Controllers */
 
 angular.module('locusjsApp.controllers', []).
-  controller('ProjectCtrl', [function() {
+    controller('HomeCtrl', [function() {
 
-  }])
-  .controller('ProfileCtrl', [function() {
-
-  }]);
+    }])
+    
+    .controller('ProjectCtrl', [function() {
+    
+    }])
+    
+    .controller('ProfileCtrl', [function() {
+    
+    }]);

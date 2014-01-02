@@ -21524,12 +21524,17 @@ angular.module('locusjsApp.directives', []).
 /* Controllers */
 
 angular.module('locusjsApp.controllers', []).
-  controller('ProjectCtrl', [function() {
+    controller('HomeCtrl', [function() {
 
-  }])
-  .controller('ProfileCtrl', [function() {
-
-  }]);;'use strict';
+    }])
+    
+    .controller('ProjectCtrl', [function() {
+    
+    }])
+    
+    .controller('ProfileCtrl', [function() {
+    
+    }]);;'use strict';
 
 /* Filters */
 
@@ -21550,6 +21555,7 @@ var LocusjsApp = angular.module('locusjsApp', [
 
 LocusjsApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
+        .when('/home', {templateUrl: 'partials/home.html', controller: 'HomeCtrl'})
         .when('/projects', {templateUrl: 'partials/projects.html', controller: 'ProjectCtrl'})
         .when('/profiles', {templateUrl: 'partials/profiles.html', controller: 'ProfileCtrl'})
         .otherwise({redirectTo: '/projects'});
