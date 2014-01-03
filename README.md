@@ -47,7 +47,7 @@ You can now access the website at
 
 - [AngularJS](http://angularjs.org/ "AngularJS")
 - [Bootsrtap](http://getbootstrap.com/ "Bootstrap")
-- [NodeJS](http://hodejs.org/ "NodeJS")
+- [NodeJS](http://nodejs.org/ "NodeJS")
 - [Bower](http://bower.io/ "Bower")
 - [Grunt](http://gruntjs.com/ "Grunt")
 
