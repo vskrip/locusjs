@@ -99,7 +99,7 @@ module.exports = function(grunt) {
       styles: {
         dest: './app/assets/app.css',
         src: [
-          'bower_components/components-font-awesome/css/font-awesome.css',
+          'bower_components/bootstrap/dist/css/bootstrap.min.css',
           'app/styles/app.css'
         ]
       },
@@ -109,9 +109,11 @@ module.exports = function(grunt) {
         },
         dest: './app/assets/app.js',
         src: [
-          'bower_components/angular/angular.js',
-          'bower_components/angular-route/angular-route.js',
+          'bower_components/angular/angular.min.js',
+          'bower_components/angular-route/angular-route.min.js',
           'bower_components/angularjs-scope.safeapply/src/Scope.SafeApply.js',
+          'bower_components/jquery/jquery.min.js',
+          'bower_components/bootstrap/dist/js/bootstrap.min.js',
           'app/scripts/services/**/*.js',
           'app/scripts/directives/**/*.js',
           'app/scripts/controllers/**/*.js',
