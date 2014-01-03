@@ -42,3 +42,12 @@ grunt
 
 You can now access the website at
 `http://localhost:8888`
+
+##Resources And Technologies
+
+- [AngularJS](http://angularjs.org/ "AngularJS")
+- [Bootsrtap](http://getbootstrap.com/ "Bootstrap")
+- [NodeJS](http://hodejs.org/ "NodeJS")
+- [Bower](http://bower.io/ "Bower")
+- [Grunt](http://gruntjs.com/ "Grunt")
+
