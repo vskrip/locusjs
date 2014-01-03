@@ -4,5 +4,6 @@ npm-debug.log
 node_modules/*
 bower_components/*
 srv/node_modules/*
-app/assets/*
+app/assets/app.css
+app/assets/app.js
 .DS_Store
