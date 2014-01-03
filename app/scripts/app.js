@@ -12,6 +12,6 @@ LocusjsApp.config(['$routeProvider', '$locationProvider', function($routeProvide
         .when('/home', {templateUrl: 'partials/home.html', controller: 'HomeCtrl'})
         .when('/projects', {templateUrl: 'partials/projects.html', controller: 'ProjectCtrl'})
         .when('/profiles', {templateUrl: 'partials/profiles.html', controller: 'ProfileCtrl'})
-        .otherwise({redirectTo: '/projects'});
+        .otherwise({redirectTo: '/home'});
     $locationProvider.html5Mode(true);
 }]);
