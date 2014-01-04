@@ -18,8 +18,8 @@ module.exports = function(grunt) {
       bower_install: {
         command: './node_modules/.bin/bower install'
       },
-      font_awesome_fonts: {
-        command: 'cp -R bower_components/components-font-awesome/fonts app/fonts'
+      srv_run: {
+        command: 'node ./srv/server.js'
       }
     },
 
@@ -42,22 +42,12 @@ module.exports = function(grunt) {
         options: {
           port: 9999
         }
-      },
-      coverage: {
-        options: {
-          base: 'coverage/',
-          port: 5555,
-          keepalive: true
-        }
       }
     },
 
     open: {
       devserver: {
         path: 'http://localhost:8888'
-      },
-      coverage: {
-        path: 'http://localhost:5555'
       }
     },
 
@@ -100,6 +90,7 @@ module.exports = function(grunt) {
         dest: './app/assets/app.css',
         src: [
           'bower_components/bootstrap/dist/css/bootstrap.min.css',
+          'bower_components/ng-grid/ng-grid.min.css',
           'app/styles/app.css'
         ]
       },
@@ -114,12 +105,13 @@ module.exports = function(grunt) {
           'bower_components/angularjs-scope.safeapply/src/Scope.SafeApply.js',
           'bower_components/jquery/jquery.min.js',
           'bower_components/bootstrap/dist/js/bootstrap.min.js',
-          'app/scripts/services/**/*.js',
-          'app/scripts/directives/**/*.js',
-          'app/scripts/controllers/**/*.js',
-          'app/scripts/filters/**/*.js',
-          'app/scripts/config/routes.js',
+          'bower_components/ng-grid/ng-grid-2.0.7.min.js',
           'app/scripts/app.js',
+          'app/scripts/config/routes.js',
+          'app/scripts/controllers/**/*.js',
+          'app/scripts/directives/**/*.js',
+          'app/scripts/filters/**/*.js',
+          'app/scripts/services/**/*.js'
         ]
       }
     }
@@ -137,13 +129,13 @@ module.exports = function(grunt) {
   grunt.registerTask('autotest:e2e', ['connect:testserver','karma:e2e_auto']);
 
   //installation-related
-  grunt.registerTask('install', ['shell:npm_install','shell:bower_install','shell:font_awesome_fonts']);
+  grunt.registerTask('install', ['shell:npm_install','shell:bower_install']);
 
   //defaults
   grunt.registerTask('default', ['dev']);
 
   //development
-  grunt.registerTask('dev', ['install', 'concat', 'connect:devserver', 'open:devserver', 'watch:assets']);
+  grunt.registerTask('dev', ['install', 'concat', 'connect:devserver', 'open:devserver', 'shell:srv_run', 'watch:assets']);
 
   //server daemon
   grunt.registerTask('server', ['connect:webserver']);
