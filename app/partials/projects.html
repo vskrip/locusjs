@@ -1,2 +1,9 @@
-<h1>Projects List</h1>
-<p>On this page list of projects.</p>
+<div id="projectList" ng-controller="ProjectCtrl">
+    <h1>Projects List</h1>
+    <p>On this page list of projects.</p>
+    <ul>
+    	<li class="row" ng-repeat="project in projects">
+    		<a ng-href="#/projects/{{project.id}}" ng-bind="project.title"></a>
+    	</li>
+    </ul>
+</div>

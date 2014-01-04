@@ -1,13 +1,14 @@
 'use strict';
-var LocusjsApp = angular.module('locusjsApp', [
+
+var locusjsApp = angular.module('locusjsApp', [
   'ngRoute',
+  'ngGrid',
   'locusjsApp.filters',
   'locusjsApp.services',
-  'locusjsApp.directives',
-  'locusjsApp.controllers'
+  'locusjsApp.directives'
 ]);
 
-LocusjsApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+locusjsApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/home', {templateUrl: 'partials/home.html', controller: 'HomeCtrl'})
         .when('/projects', {templateUrl: 'partials/projects.html', controller: 'ProjectCtrl'})

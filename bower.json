@@ -13,6 +13,7 @@
     "angular-touch": "latest",
     "angular-mocks": "latest",
     "angular-scenario": "latest",    
-    "angularjs-scope.safeapply": "*"
+    "angularjs-scope.safeapply": "*",
+    "ng-grid": "latest"
   }
 }
