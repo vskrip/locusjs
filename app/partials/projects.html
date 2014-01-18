@@ -3,7 +3,7 @@
     <p>On this page list of projects.</p>
     <ul>
     	<li class="row" ng-repeat="project in projects">
-    		<a ng-href="#/projects/{{project.id}}" ng-bind="project.title"></a>
+    		<a ng-href="#/{{project.id}}" ng-bind="project.title"></a>
     	</li>
     </ul>
 </div>
