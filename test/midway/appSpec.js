@@ -6,7 +6,7 @@ describe("Midway: Testing Modules", function() {
 
     var module;
     before(function() {
-      module = angular.module("App");
+      module = angular.module("locusjsApp");
     });
 
     it("should be registered", function() {

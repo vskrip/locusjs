@@ -8,7 +8,7 @@ describe("Midway: Testing Controllers", function() {
     if(tester) {
       tester.destroy();
     }
-    tester = ngMidwayTester('App');
+    tester = ngMidwayTester('locusjsApp');
   });
 
   it('should load the VideosCtrl controller properly when /videos route is accessed', function(done) {

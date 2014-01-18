@@ -3,7 +3,7 @@
 //
 describe("Unit: Testing Controllers", function() {
 
-  beforeEach(angular.mock.module('App'));
+  beforeEach(angular.mock.module('locusjsApp', []));
 
   it('should contain an $appStorage service', inject(function($appStorage) {
     expect($appStorage).not.to.equal(null);

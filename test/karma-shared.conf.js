@@ -15,15 +15,12 @@ module.exports = function() {
       'bower_components/angular/angular.js',
       'bower_components/angular-route/angular-route.js',
       'bower_components/angularjs-scope.safeapply/src/Scope.SafeApply.js',
-      'app/scripts/lib/router.js',
 
       //App-specific Code
-      'app/scripts/config/config.js',
       'app/scripts/services/**/*.js',
       'app/scripts/directives/**/*.js',
       'app/scripts/controllers/**/*.js',
       'app/scripts/filters/**/*.js',
-      'app/scripts/config/routes.js',
       'app/scripts/app.js',
 
       //Test-Specific Code

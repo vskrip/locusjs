@@ -5,7 +5,7 @@ describe("Midway: Testing Filters", function() {
 
   var tester;
   beforeEach(function() {
-    tester = ngMidwayTester('App');
+    tester = ngMidwayTester('locusjsApp');
   });
 
   afterEach(function() {
