@@ -135,7 +135,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['dev']);
 
   //development
-  grunt.registerTask('dev', ['install', 'concat', 'connect:devserver', 'open:devserver', 'shell:srv_run', 'watch:assets']);
+  grunt.registerTask('dev', ['install', 'concat', 'connect:devserver', 'open:devserver', 'watch:assets']);
 
   //server daemon
   grunt.registerTask('server', ['connect:webserver']);
