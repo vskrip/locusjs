@@ -1,5 +1,29 @@
 /* app css stylesheet */
 
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.body-content {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.thumbnail {
+    padding-top: 15px;
+    max-width: 280px;
+}
+
+.thumbnail img {
+    width: 240px;
+    height: 200px;
+}
+
 .gridStyle {
     border: 1px solid rgb(212,212,212);
     width: 400px; 
