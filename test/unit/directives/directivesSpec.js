@@ -5,7 +5,7 @@ describe("Unit: Testing Directives", function() {
 
   var $compile, $rootScope;
 
-  beforeEach(angular.mock.module('locusjsApp', []));
+  beforeEach(angular.mock.module('locusjsApp'));
 
   beforeEach(inject(
     ['$compile','$rootScope', function($c, $r) {

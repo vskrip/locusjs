@@ -3,7 +3,7 @@
 //
 describe("Unit: Testing Filters", function() {
 
-  beforeEach(angular.mock.module('locusjsApp', []));
+  beforeEach(angular.mock.module('locusjsApp'));
 
   it('should have a range filter', inject(function($filter) {
     expect($filter('range')).not.to.equal(null);
