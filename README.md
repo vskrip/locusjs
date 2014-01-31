@@ -50,4 +50,4 @@ You can now access the website at
 - [NodeJS](http://nodejs.org/ "NodeJS")
 - [Bower](http://bower.io/ "Bower")
 - [Grunt](http://gruntjs.com/ "Grunt")
-
+- [Article "RESTful CRUD With AngularJS"] (http://draptik.github.io/blog/2013/07/28/restful-crud-with-angularjs/ "RESTful CRUD With AngularJS")
