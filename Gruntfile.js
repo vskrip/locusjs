@@ -90,7 +90,6 @@ module.exports = function(grunt) {
         dest: './app/assets/app.css',
         src: [
           'bower_components/bootstrap/dist/css/bootstrap.min.css',
-          'bower_components/ng-grid/ng-grid.min.css',
           'app/styles/app.css'
         ]
       },
@@ -100,14 +99,13 @@ module.exports = function(grunt) {
         },
         dest: './app/assets/app.js',
         src: [
+          'bower_components/jquery/jquery.min.js',        
           'bower_components/angular/angular.min.js',
+          'bower_components/angular-resource/angular-resource.min.js',          
           'bower_components/angular-route/angular-route.min.js',
           'bower_components/angularjs-scope.safeapply/src/Scope.SafeApply.js',
-          'bower_components/jquery/jquery.min.js',
           'bower_components/bootstrap/dist/js/bootstrap.min.js',
-          'bower_components/ng-grid/ng-grid-2.0.7.min.js',
           'app/scripts/app.js',
-          'app/scripts/config/routes.js',
           'app/scripts/controllers/**/*.js',
           'app/scripts/directives/**/*.js',
           'app/scripts/filters/**/*.js',
