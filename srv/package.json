@@ -1,0 +1,14 @@
+{
+  "name": "locusjs-server",
+  "description": "Telemetric support application",
+  "version": "0.0.1",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/vskrip/locusjs"
+  },
+  "homepage": "http://locusjs.org",
+  "devDependencies": {  
+    "express": "latest",
+    "mysql" : "latest"
+  }
+}
