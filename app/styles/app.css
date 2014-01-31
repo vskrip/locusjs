@@ -14,11 +14,14 @@
     margin-left: 50px;
     margin-right: 50px;
 }
+
 .thumbnail {
+    border-style: none;
     padding-top: 15px;
     max-width: 280px;
 }
 
+/*TODO: Delete if unneeded*/
 .thumbnail img {
     width: 240px;
     height: 200px;
@@ -28,4 +31,21 @@
     border: 1px solid rgb(212,212,212);
     width: 400px; 
     height: 300px;
+}
+/**/
+
+.page_title {
+    text-align: center;
+}
+
+.weight_calc_column {
+    max-width: 430px;
+}
+
+.weight_tool_input {
+    width:48px;
+}
+
+.img_container img {
+    width: 140px;
 }
