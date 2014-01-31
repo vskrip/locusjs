@@ -2,8 +2,25 @@
 
 /* Services */
 
+var services = angular.module('locusjsApp.services', ['ngResource']);
 
-// Demonstrate how to register services
-// In this case it is a simple value service.
-angular.module('locusjsApp.services', []).
-  value('version', '0.0.1');
+//TODO:Change url in production version
+
+var baseUrl = 'http://localhost\\:3000';
+
+services.factory('CompoItemsFactory', function ($resource) {
+    return $resource(baseUrl + '/compoItems', {}, {
+        query: { method: 'GET', isArray: true },
+        create: { method: 'POST' }
+    });
+});
+
+services.factory('CompoItemFactory', function ($resource) {
+    return $resource(baseUrl + '/compoItems/:id', {}, {
+        show: { method: 'GET' },
+        update: { method: 'PUT', params: {id: '@id'} },
+        delete: { method: 'DELETE', params: {id: '@id'} }
+    });
+});
+
+services.value('version', '0.0.1');
