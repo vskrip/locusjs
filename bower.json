@@ -3,7 +3,7 @@
   "dependencies": {
     "bootstrap": "latest",
     "angular": "latest",
-    "angular-route": "latest",
+    "angular-ui-router": "*",
     "angular-i18n": "latest",
     "angular-animate": "latest",
     "angular-cookies": "latest",
@@ -12,7 +12,7 @@
     "angular-sanitize": "latest",
     "angular-touch": "latest",
     "angular-mocks": "latest",
-    "angular-scenario": "latest",    
+    "angular-scenario": "latest", 
     "angularjs-scope.safeapply": "*"
   }
 }

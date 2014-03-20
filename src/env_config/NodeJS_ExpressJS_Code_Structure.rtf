@@ -1,0 +1,185 @@
+NodeJS and ExpressJS - Tools and Code Structure
+
+The purpose of this post is to present a set of tools and frameworks for rapid web development and a way to organize your code.
+
+Tools and Frameworks
+
+Development Tools
+	•	Sublime Text for coding
+
+Frameworks
+	•	NodeJS
+	•	ExpressJS - API for web development
+
+View/Template Technology
+	•	ejs - very close to html and easy learning curve
+	•	ejs-locals - supports decorator pattern
+
+Libraries
+	•	futures - NodeJS is an event driven single threaded framework and it's easy to have multiple nested callbacks that make things look very spaghetti
+	•	i18next - localization both server and client sides
+	•	express-validator - provides validation and santization
+	•	string - provides common string operations like truncate
+	•	nodetime - NodeJS profiling
+
+Code Organization
+
+The following is the project structure I usually use. The "/" suffice means that it's a folder.  "-->" means it's inside a folder, while "---->" means it's inside the 2nd level of a folder.
+
+root_folder/
+-->providers/
+-->models/
+-->routers/
+-->views/
+---->partials/
+---->mobile/
+---->layouts/
+->utils/
+-->locales/
+-->public/
+---->images/
+---->javascripts/
+---->stylesheets/
+-->app.js
+-->app_mobile.js
+
+The NodeJS application is located in the root_folder/ above.
+
+providers/ is the business logic or data access layer.
+
+models/ stores object entities.
+
+routers/ stores controllers. I could have called this controllers/.
+
+views/ stores the templates. All the default templates are stored inside this parent folder. I store the mobile templates inside the views/mobile/ folder. views/partials/ stores components like header, footer,  or templates that both the web and mobile share, etc.
+
+utils/ stores utility functions that can be used anything in the application. (Ex. HttpRequest, string operations)
+
+locales/ stores files for i18n.
+
+public/ stores static assets like images, javascripts, and css stylesheets.
+
+app.js and app_mobile.js store routers and global configurations for the web and mobile versions of the applications respectively.
+
+
+Application Entry Point Configuration:
+
+In the above folder structure, app.js and app_mobile.js controls the application flow. I have put some comments in the important parts of the code snippet.
+
+// include the default libraries
+
+var express = require('express');
+  engine = require('ejs-locals'),
+  i18n = require("i18next");
+
+// include your routers/controllers
+
+var loginRouter = require('./routers/loginRouter');
+var postRouter = require('./routers/PostRouter');
+
+// i18n settings
+
+var i18nOptions = {
+  fallbackLng: 'en',
+  resSetPath: 'locales/__lng__/__ns__.json',
+  detectLngFromPath: 0,
+  saveMissing: true,
+  debug: false
+};
+
+i18n.init(i18nOptions);
+
+// Server Configuration
+
+var app = module.exports = express();
+app.engine('ejs', engine);
+
+app.configure(function(){
+  app.set('views', __dirname + '/views');
+  app.set('view engine', 'ejs');
+  app.set('view options', {layout: 'mobile/layout.ejs'});
+  app.set('mobile_prefix', 'mobile/');
+  app.use(express.bodyParser());
+  app.use(i18n.handle);
+  app.use(expressValidator);
+  app.use(express.methodOverride());
+  app.use(express.cookieParser());
+  app.use(express.session({ secret: 'your_secret_code', cookie: { maxAge: 31536000000} }));
+
+  app.use(flash());
+
+  app.use(function(req, res, next){
+
+    res.locals.currentUser = req.session.user;
+    res.locals.currentHost = req.header('host');
+    res.locals.currentUrl = req.url;
+    res.locals.currentLocale = '/' + i18n.lng();
+    res.locals.isMobile = true;
+    
+    /* 
+     if your image assets are language dependent, you can save them in folders locales/en/, locales/es
+    */
+    if(i18n.lng() == 'en') {
+      res.locals.currentImageDir = '';
+    } else {
+      res.locals.currentImageDir = '/' + i18n.lng();
+    }
+
+    next();
+  });
+
+  app.use(app.router);
+  app.use(express.static(__dirname + '/public'));
+});
+
+i18n.registerAppHelper(app)
+    .serveDynamicResources(app);
+
+i18n.serveWebTranslate(app, {
+    i18nextWTOptions: {
+      languages: ['fr', 'en'],
+      }
+});
+
+app.configure('development', function(){
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+});
+
+app.configure('production', function(){
+  app.use(express.errorHandler());
+});
+
+var requireRole = function(role) {
+  return function(req, res, next) {
+    if(req.session.user != null && req.session.user.role === role)
+      next();
+    else
+      res.redirect('/' + req.i18n.lng() + '/login');
+  }
+};
+
+var requireAuth = function() {
+  return function(req, res, next) {
+
+    if(req.session.user != null) {
+      next();
+    } else {
+      console.log('Redirect link: ' + req.path);
+      req.session.redirect_to = req.path;
+      res.redirect('/' + req.i18n.lng() + '/login');
+    }
+  }
+};
+
+app.get('/:lng/login', loginRouter.login);
+app.post('/:lng/login', loginRouter.submitLogin);
+app.get('/:lng/posts', requireAuth(), postRouter.listAllPosts);
+
+app.configure('production', function(){
+  app.use(express.errorHandler());
+});
+
+http.createServer(app).listen(8080, function(){
+  console.log("Server listening on port %d in %s mode", 8080, app.settings.env);
+});
+

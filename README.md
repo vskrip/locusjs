@@ -51,3 +51,4 @@ You can now access the website at
 - [Bower](http://bower.io/ "Bower")
 - [Grunt](http://gruntjs.com/ "Grunt")
 - [Article "RESTful CRUD With AngularJS"] (http://draptik.github.io/blog/2013/07/28/restful-crud-with-angularjs/ "RESTful CRUD With AngularJS")
+- [Articel "Grouping Nested ngRepeat Lists In AngularJS"] (http://www.bennadel.com/blog/2456-Grouping-Nested-ngRepeat-Lists-In-AngularJS.htm/ "Grouping Nested ngRepeat Lists In AngularJS")

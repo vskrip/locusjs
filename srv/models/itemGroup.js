@@ -25,6 +25,29 @@ exports.findById = function (req, res) {
         });
 };
 
+//TODO: Delete from production version how redundant
+// Select unique title of parents
+exports.findParentGroups = function (req, res) {
+    connection.query("SELECT DISTINCT parent_title FROM item_group", function (err, rows) {
+        if (err) {
+            res.send(err);
+        }
+        res.send(rows);
+    });
+};
+
+//TODO: Delete from production version how redundant
+//Select items of parent group
+exports.findByParent = function (req, res) {
+    connection.query("SELECT * FROM item_group WHERE parent_title = ?", [req.params.parent_title],
+        function (err, rows) {
+            if (err) {
+                res.send(err);
+            }
+            res.send(rows);
+        });
+};
+
 exports.addItemGroup = function (req, res) {
     connection.query(
         "INSERT INTO item_group (parent_title, group_title, image) VALUES (?, ?, ?)",

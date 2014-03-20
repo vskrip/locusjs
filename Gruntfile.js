@@ -101,10 +101,11 @@ module.exports = function(grunt) {
         src: [
           'bower_components/jquery/jquery.min.js',        
           'bower_components/angular/angular.min.js',
-          'bower_components/angular-resource/angular-resource.min.js',          
-          'bower_components/angular-route/angular-route.min.js',
+          'bower_components/angular-resource/angular-resource.min.js',
+          'bower_components/angular-ui-router/release/angular-ui-router.min.js',
           'bower_components/angularjs-scope.safeapply/src/Scope.SafeApply.js',
           'bower_components/bootstrap/dist/js/bootstrap.min.js',
+          //TODO: Implement compression customer scripts before splice
           'app/scripts/app.js',
           'app/scripts/controllers/**/*.js',
           'app/scripts/directives/**/*.js',

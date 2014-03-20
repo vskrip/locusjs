@@ -1,0 +1,19 @@
+<div class="thumbnail weight_calc_column">
+    <h2>Bottom Hole Assembly (BHA)</h2>
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>Items</th>
+            <th>Diameter, mm</th>
+            <th>Model</th>
+            <th>Number</th>
+            <th>Length, m</th>
+        </tr>
+        <tr ng-repeat="item in compositionList">
+            <td>{{item.item_title}}</td>
+            <td>{{item.diameter}}</td>
+            <td>{{item.model}}</td>
+            <td>{{item.number}}</td>
+            <td>{{item.length_item}}</td>
+        </tr>
+    </table>
+</div>

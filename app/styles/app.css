@@ -48,4 +48,16 @@
 
 .img_container img {
     width: 140px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.footer_content {
+    margin: 50px 50px 50px 50px;
+}
+
+.group_item_thumbnail {
+    float: left;
+    width: 200px;
+    padding: 5px;
 }

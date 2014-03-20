@@ -1,0 +1,13 @@
+<!-- partials/groups.html -->
+<div class="thumbnail weight_calc_column">
+    <h2>Bottom Hole Assembly Groups</h2>
+    <div class="row" ng-repeat="group in groups">
+        <h3>{{group.label}}</h3>
+        <div class="group_item_thumbnail" ng-repeat="item in group.items">
+            {{item.group_title}}<br />
+            <a ui-sref="groupView">
+                <img src="./images/icons/{{item.image}}" class="img-thumbnail" />
+            </a>
+        </div>
+    </div>
+</div>

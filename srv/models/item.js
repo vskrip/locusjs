@@ -25,11 +25,34 @@ exports.findById = function (req, res) {
         });
 };
 
+exports.findCompoItems = function (req, res) {
+    connection.query("SELECT * FROM item WHERE position != 0 ORDER BY position DESC",
+        function (err, rows) {
+            if (err) {
+                res.send(err);
+            }
+            res.send(rows);
+        });
+};
+
+exports.removeFromCompo = function (req, res) {
+    connection.query(
+        "UPDATE item SET position = O WHERE id = ?",
+        function (err, rows) {
+            if (err) {
+                res.send(err);
+            }
+            res.send(rows);
+        }
+    );
+};
+
 exports.addItem = function (req, res) {
     connection.query(
-        "INSERT INTO item (group_id, item_title, diameter, model,\
-            number, length_item, weight) VALUES (?, ?, ?, ?, ?, ?, ?)",
+        "INSERT INTO item (position, group_id, item_title, diameter, model,\
+            number, length_item, weight) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
         [
+            req.body.position,
             req.body.group_id,
             req.body.item_title,
             req.body.diameter,
@@ -49,10 +72,11 @@ exports.addItem = function (req, res) {
 
 exports.updateItem = function (req, res) {
     connection.query(
-        "UPDATE item SET group_id = ?, item_title = ?, diameter = ?,\
+        "UPDATE item SET position = ?, group_id = ?, item_title = ?, diameter = ?,\
              model = ?, number = ?, length_item = ?, weight = ? \
              WHERE id = ?",
         [
+            req.body.position,
             req.body.group_id,
             req.body.item_title,
             req.body.diameter,
